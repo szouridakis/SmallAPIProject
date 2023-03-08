@@ -11,6 +11,9 @@ app = FastAPI()
 bacon_endpoint = "https://baconipsum.com/api/"
 bacon_request = {'type': 'all-meat'}
 
+@app.get("/")
+async def read_root():
+    return {"Python":"Assignment"}
 
 @app.get("/class/{class_name}")
 async def read_class(class_name):
@@ -42,11 +45,11 @@ async def read_datatype(datatype):
 
 
 @app.get("/random")
-def random_bacon():
+async def random_bacon():
     request = requests.get(url=bacon_endpoint, params=bacon_request)
     response = request.json()
     return response[0:4]
 
 
-if __name__ == '__main__':
-    uvicorn.run("main:app", reload=True)
+#if __name__ == '__main__':
+#    uvicorn.run("main:app", reload=True)

@@ -5,7 +5,7 @@ class InputReader:
 
     def __init__(self):
         # Read from input file
-        self.file = bz2.BZ2File("managed-object-index.yaml.bz2", "r")
+        self.file = bz2.BZ2File("/code/app/managed-object-index.yaml.bz2", "r")
         self.data = self.file.read().decode('UTF-8')
         self.file.close()
 
