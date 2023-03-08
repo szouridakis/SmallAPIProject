@@ -1,5 +1,4 @@
 import uvicorn
-from pydantic import BaseModel
 
 import InputReader
 import requests
